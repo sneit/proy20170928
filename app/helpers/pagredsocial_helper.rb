@@ -1,0 +1,2 @@
+module PagredsocialHelper
+end

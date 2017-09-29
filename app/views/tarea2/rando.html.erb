@@ -1,0 +1,72 @@
+ <section class="content-header">
+  <h1>
+    RoR
+    <small>Formularios</small>
+  </h1>
+</section>
+
+<section class="content">
+         <!-- REGISTRAR PERSONA -->
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Formularios</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-12">
+                
+                    <div class="panel-body">
+              
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tes1">Test1</a></li>
+                  </ul>
+                
+                  <div class="tab-content">
+                    <div id="test1" class="tab-pane fade in active">
+                       
+                        <%= form_for :producto, :url => {:controller => "tarea2", :action => "rando_post"}, :method => :post, :html => { :class => "form-horizontal" , :id => "form_producto"}  do |f| %>
+                        <h3>Operación Rotar</h3>
+                        
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <input type="number" class="form-control" placeholder="Ingresar digito A" name="txt_num_a" requiered>
+                                <input type="number" class="form-control" placeholder="Ingresar digito B" name="txt_num_b" requiered>
+                                <input type="number" class="form-control" placeholder="Ingresar digito C" name="txt_num_c" requiered>
+                                <input type="number" class="form-control" placeholder="Ingresar digito D" name="txt_num_d" requiered>
+                                Seleccionar:
+                                <select name="rotar">
+                                  <option value="1">ARRIBA</option>
+                                  <option value="2">ABAJO</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-sm-2">
+                                <input type="submit" value="Rotar"/>
+                            </div>
+                        </div>
+                        
+                        <% end %>
+                        
+                        Rotar : <%= @Ingresado %><br/>
+                        <%= @result1 %><br/>
+                        <%= @result2 %><br/>
+                        <%= @result3 %><br/>
+                        <%= @result4 %><br/>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+</section>

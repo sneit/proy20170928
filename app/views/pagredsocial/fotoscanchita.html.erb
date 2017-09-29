@@ -1,0 +1,77 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="page-header">Fotos Canchita</h1>
+        <ul class="photos gallery-parent">
+          <li><a href="/img/canchita/ate.jpg" data-hover="tooltip" data-placement="top" title="Ate" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de Ate" data-footer="Dimensiones 15 x 8" data-toggle="lightbox"><img src="/img/canchita/ate.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/comas.jpg" data-hover="tooltip" data-placement="top" title="Comas" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de Comas" data-footer="Dimensiones 16 x 8" data-toggle="lightbox"><img src="/img/canchita/comas.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/el_agustino.jpg" data-hover="tooltip" data-placement="top" title="El Agustino" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de El Agustino" data-footer="Dimensiones 13 x 7" data-toggle="lightbox"><img src="/img/canchita/el_agustino.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/la_molina.jpg" data-hover="tooltip" data-placement="top" title="La Molina #1" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de La Molina #1" data-footer="Dimensiones 15 x 8" data-toggle="lightbox"><img src="/img/canchita/la_molina.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/la_molina2.jpg" data-hover="tooltip" data-placement="top" title="La Molina #2" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de La Molina #2" data-footer="Dimensiones 15 x 7.5" data-toggle="lightbox"><img src="/img/canchita/la_molina2.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/la_victoria.jpg" data-hover="tooltip" data-placement="top" title="La Victoria" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de La Victoria" data-footer="Dimensiones 15 x 8" data-toggle="lightbox"><img src="/img/canchita/la_victoria.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/san_isidro.jpg" data-hover="tooltip" data-placement="top" title="San Isidro" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de San Isidro" data-footer="Dimensiones 16 x 8" data-toggle="lightbox"><img src="/img/canchita/san_isidro.jpg" class="img-thumbnail" alt=""></a></li>
+          <li><a href="/img/canchita/san_juan_lurigancho.jpg" data-hover="tooltip" data-placement="top" title="San Juan de Lurigancho" data-gallery="mygallery" data-parent=".gallery-parent" data-title="Canchita de San Juan de Lurigancho" data-footer="Dimensiones 13.5 x 6" data-toggle="lightbox"><img src="/img/canchita/san_juan_lurigancho.jpg" class="img-thumbnail" alt=""></a></li>
+        </ul>
+      </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default friends">
+          <div class="panel-heading">
+            <h3 class="panel-title">Integrantes</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li><a href="#" class="thumbnail"><img src="/img/hadson.jpg" alt=""></a></li>
+              <li><a href="#" class="thumbnail"><img src="/img/user.png" alt=""></a></li>
+              <li><a href="#" class="thumbnail"><img src="/img/user.png" alt=""></a></li>
+              <li><a href="#" class="thumbnail"><img src="/img/user.png" alt=""></a></li>
+              <li><a href="#" class="thumbnail"><img src="/img/user.png" alt=""></a></li>
+              <li><a href="#" class="thumbnail"><img src="/img/user.png" alt=""></a></li>
+            </ul>
+            <div class="clearfix"></div>
+            <a class="btn btn-primary" href="/pagredsocial/integrante.html">Sobre Nosotros</a>
+          </div>
+        </div>
+        <div class="panel panel-default groups">
+          <div class="panel-heading">
+            <h3 class="panel-title">Comentarios de Nuestro Miembros</h3>
+          </div>
+          <div class="panel-body">
+            <div class="group-item">
+              <img src="/img/group.png" alt="">
+              <h4><a href="#" class="">Carlos Perez</a></h4>
+              <p>Los canchitas depostivas son muy amplias y bien acondicionadas.</p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="group-item">
+              <img src="/img/group.png" alt="">
+              <h4><a href="#" class="">Erick Torres</a></h4>
+              <p>La canchita de San Luis esta implementando un mini Gimnasio para realizar calentamientos, espectacular.</p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="group-item">
+              <img src="/img/group.png" alt="">
+              <h4><a href="#" class="">Rafael Barrento</a></h4>
+              <p>Las canchitas de San Juan de Lurigancho ya necesitan mantenimiento.</p>
+            </div>
+            <div class="clearfix"></div>
+            <a href="#" class="btn btn-primary">Ver más comentarios</a>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+  </div>
+</section>
+
+<script src="/js/fotos-canchitas.js"></script>
+<script>
+  $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+  }); 
+  $(function () {
+  $('[data-hover="tooltip"]').tooltip()
+  })
+</script>

@@ -1,0 +1,281 @@
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+		{
+		//$("#editar").on('click', function () {	 
+
+  		  $('#example1 tr').on('click', function(){
+          var vnroDoc     = $(this).find('td:eq(1)').html();
+          var vnomCli     = $(this).find('td:eq(2)').html();
+          var vapeParCli  = $(this).find('td:eq(3)').html();
+          var vapeMarCli  = $(this).find('td:eq(4)').html();
+          var vfecNac     = $(this).find('td:eq(5)').html();
+          
+          var vemail      = $(this).find('td:eq(7)').html();
+          var vpass       = $(this).find('td:eq(8)').html();
+          var vnroCel     = $(this).find('td:eq(9)').html();
+          var vDir        = $(this).find('td:eq(10)').html();
+          
+
+          $('#nroDoc').val(vnroDoc);
+          $('#nomCli').val(vnomCli);
+          $('#apeParCli').val(vapeParCli);
+          $('#apeMarCli').val(vapeMarCli);
+          $('#datepicker').val(vfecNac);
+          
+          $('#email').val(vemail);
+          $('#pass').val(vpass);
+          $('#repass').val(vpass);
+          $('#nroCel').val(vnroCel);
+          $('#Dir').val(vDir);
+          
+          $('#vdis').css('border-color', 'Red');
+          $('#vperfil').css('border-color', 'Red');
+          
+          $('#registrar').val("Actualizar");
+          
+          //alert($('#registrar').val());
+          
+        });
+
+			//});
+		});
+</script>
+
+
+<%= form_for :producto, :url => {:controller => "dashboard", :action => "persona_post"}, :method => :post, :html => { :class => "" , :id => "form_producto"}  do |f| %>
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Registrar
+        <small>Persona</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+     <!-- REGISTRAR PERSONA -->
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Registrar Persona</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            
+            
+            <div class="col-md-5">
+              <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Tipo de Documento</label>
+                        
+                        <select id="tipdoc" name="tipdoc" class="form-control select2" style="width: 100%;">
+                           <% if @tipodocumentos != nil && @tipodocumentos != ""
+                             @tipodocumentos.each do |p| %>
+                            <option value="<%=p.id_tipo_doc %>"><%=p.nombre_doc %></option>
+                          <% end end %>
+                        </select>
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Número de Documento</label>
+                            <input type="text" id="nroDoc" name="nroDoc" style="width: 100%"/>
+                        </div>
+                    </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Nombres</label>
+                <input type="text" id="nomCli" name="nomCli" style="width: 100%;" />
+              </div>
+              <div class="form-group">
+                <label>Ape. Paterno</label>
+                <input type="text" id="apeParCli" name="apeParCli" style="width: 100%;"/>
+              </div>
+              <div class="form-group">
+                <label>Ape. Materno</label>
+                <input type="text" id="apeMarCli" name="apeMarCli" style="width: 100%;"/>
+              </div>
+              
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Fecha de Nacimiento</label>
+        
+                        <div class="input-group date" style="width: 100%; text-align: left;">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control pull-right" name="fecNac" id="datepicker">
+                        </div>
+                      </div>   
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <select id="sexo" name="sexo" class="form-control select" style="width: 100%;">
+                          <option value="M" selected="selected">MASCULINO</option>
+                          <option value="F">FEMENINO</option>
+                        </select>
+                    </div>  
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Dirección</label>
+                  <div class="form-group">
+                    <textarea id="Dir" name="Dir" class="form-control" placeholder="Ingresar la dirección"></textarea>
+                  </div>
+              </div>
+              
+            </div>
+            <!-- /.col -->
+            
+            <div class="col-md-4">
+              <div class="row">
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                        <label>Distrito</label>
+                        <select id="dis" name="dis"class="form-control select2" style="width: 100%;">
+                           <% if @distritos != nil && @distritos != ""
+                             @distritos.each do |p| %>
+                            <option value="<%=p.id_distrito %>"><%=p.nombre_dist %></option>
+                          <% end end %>
+                        </select>
+                      </div>
+                  </div>
+                  
+                  <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input id="nroCel" type="text" name="nroCel" style="width: 100%"/>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Control de Accesos</h3>
+                </div>
+                
+                <div class="form-group has-feedback">
+                    <label>Email</label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="Email">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                  
+                <div class="form-group has-feedback">
+                    <label>Password</label>
+                        <input id="pass" name="pass" type="password" class="form-control" placeholder="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                
+                <div class="form-group has-feedback">
+                    <label>Repetir Password</label>
+                        <input id="repass" name="repass" type="password" class="form-control" placeholder="Repetir password">
+                        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label>Perfil</label>
+                    <select id="perfil" name="perfil" class="form-control select2" style="width: 100%;">
+                           <% if @roles != nil && @roles != ""
+                             @roles.each do |p| %>
+                            <option value="<%=p.id_rol %>"><%=p.nombre %></option>
+                          <% end end %>
+                    </select>
+                </div>  
+              </div>
+              
+            </div>
+            
+            <div class="col-md-2">
+                    <input id="registrar" name="registrar" type="submit" class="btn btn-primary" value="Guardar"/>
+                    <!--<button type="button" class="btn btn-primary">Guardar</button>-->
+                    <button id="cancelar" type="button" class="btn btn-success">Cancelar</button>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+      
+      <div class="row">
+        <div class="col-md-12">
+          
+          <div class="box">
+            
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Nro/Doc</th>
+                  <th>Nombre</th>
+                  <th>Ape/Paterno</th>
+                  <th>Ape/Materno</th>
+                  <th>Fec/Nac</th>
+                  <th>Sexo</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Celular</th>
+                  <th>Dirección</th>
+                  <th>Tip/Doc.</th>
+                  <th>Perfil</th>
+                  <th style="display:none">Distrito</th>
+                  <th>Edit</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                    <% if @persona != nil && @persona != ""
+                        @persona.each do |p| %>
+                        <tr class="gradeU">
+                            <td><%=p.id_persona %></td>
+                            <td><%=p.nro_documento %></td>
+                            <td><%=p.nombre %></td>
+                            <td><%=p.ape_paterno %></td>
+                            <td><%=p.ape_materno %></td>
+                            <td><%=p.fec_nacimiento %></td>
+                            <td><%=p.sexo %></td>
+                            <td><%=p.email %></td>
+                            <td><%=p.password %></td>
+                            <td><%=p.celular %></td>
+                            <td><%=p.direccion %></td>
+                            <td><%=p.id_tipo_doc %></td>
+                            <td><%=p.id_rol %></td>
+                            <td style="display:none"><%=p.id_distrito %></td>
+                            <td><button id="editar" type="button" class="btn btn-primary">Editar</button></td>
+                        </tr>
+                    <% end end %>
+                </tbody>
+                  
+               
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         
+        </div>
+        <!-- /.col (right) -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+    
+<% end %>

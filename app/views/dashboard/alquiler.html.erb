@@ -1,0 +1,166 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Registrar
+        <small>Registrar Alqiler de Canchita</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+     <!-- REGISTRAR ALQUILER -->
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Registrar Alquiler</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-5">
+              
+              <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Tipo de Documento</label>
+                        <select id="tipoDoc" class="form-control select" style="width: 100%; height:29px">
+                          <option value="01" selected="selected">DNI</option>
+                          <option value="04">CARNET DE EXTRANJERIA</option>
+                          <option value="07">PASAPORTE</option>
+                          <option value="00">OTROS</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Número de Documento</label>
+                            <input type="text" id="nroDoc" style="width: 100%"/>
+                        </div>
+                    </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Nombres</label>
+                <input type="text" id="nomCli" style="width: 100%;"/>
+              </div>
+              <div class="form-group">
+                <label>Ape. Paterno</label>
+                <input type="text" id="apeParCli" style="width: 100%;"/>
+              </div>
+              <div class="form-group">
+                <label>Ape. Materno</label>
+                <input type="text" id="apeMarCli" style="width: 100%;"/>
+              </div>
+              
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Fecha de Nacimiento</label>
+        
+                        <div class="input-group date" style="width: 100%; text-align: left;">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control pull-right" id="datepicker">
+                        </div>
+                      </div>   
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <select id="sexo" class="form-control select" style="width: 100%;">
+                          <option value="M" selected="selected">MASCULINO</option>
+                          <option value="F">FEMENINO</option>
+                        </select>
+                    </div>  
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Dirección</label>
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Ingresar la dirección"></textarea>
+                  </div>
+              </div>
+              
+            </div>
+            <!-- /.col -->
+            <div class="col-md-4">
+              <div class="row">
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                        <label>Distrito</label>
+                        <select class="form-control select2" style="width: 100%;">
+                          <option value="1" selected="selected">El Agustino</option>
+                          <option value="2">La Victoria</option>
+                          <option value="3">San Borja</option>
+                          <option value="4">La Molina</option>
+                          <option value="5">Comas</option>
+                          <option value="6">Puente Piedra</option>
+                          <option value="7">San Luis</option>
+                        </select>
+                      </div>
+                  </div>
+                  
+                  <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input type="text" id="nroCel" style="width: 100%"/>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Control de Accesos</h3>
+                </div>
+                
+                <div class="form-group has-feedback">
+                    <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                  
+                <div class="form-group has-feedback">
+                    <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                
+                <div class="form-group has-feedback">
+                    <label>Repetir Password</label>
+                        <input type="password" class="form-control" placeholder="Repetir password">
+                        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label>Perfil</label>
+                    <select id="sexo" class="form-control select" style="width: 100%;">
+                      <option value="A" selected="selected">ADMINISTRADOR</option>
+                      <option value="A">MIEMBROS</option>
+                      <option value="A">CLIENTE</option>
+                    </select>
+                </div>  
+              </div>
+              
+            </div>
+            
+            <div class="col-md-2">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-success">Cancelar</button>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+     
+    </section>
+    <!-- /.content -->

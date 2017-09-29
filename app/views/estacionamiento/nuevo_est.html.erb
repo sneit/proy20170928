@@ -1,0 +1,90 @@
+<%= form_for :producto, :url => {:controller => "estacionamiento", :action => "nuevo_est_post"}, :method => :post, :html => { :class => "form-horizontal" , :id => "form_producto"}  do |f| %>
+
+<section class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Registrar
+        <small>Estacionamiento</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+     <!-- REGISTRAR PERSONA -->
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Estacionamiento</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-5">
+              
+              <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Número de Documento</label>
+                            <input type="text" name="doc" style="width: 100%" placeholder="Ingresar Nro DNI" required autofocus/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label>Estacionamiento</label>
+                        <select name="est" class="form-control select2" style="width: 100%;">
+                          <option value="1" selected="selected">El Agustino</option>
+                          <option value="2">La Victoria</option>
+                          <option value="3">San Borja</option>
+                          <option value="4">La Molina</option>
+                          <option value="5">Comas</option>
+                          <option value="6">Puente Piedra</option>
+                          <option value="7">San Luis</option>
+                        </select>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-md-4">
+              <div class="row">
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                        <label>Hora Inicio</label>
+                        <input type="text" name="hrIni" style="width: 100%" placeholder="Formato HH:MM AM/PM" required autofocus/>
+                      </div>
+                  </div>
+                  
+                  <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Hora Inicio</label>
+                        <input type="text" name="hrFin" style="width: 100%" placeholder="Formato HH:MM AM/PM" required autofocus/>
+                    </div>
+                  </div>
+              </div>
+              
+            </div>
+            
+            <div class="col-md-2">
+                    <input type="submit" class="btn btn-primary" value="Guardar"/>
+                    <!--<button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-success">Cancelar</button>-->
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+      
+    </section>
+    <!-- /.content -->
+</section>
+
+<% end %>

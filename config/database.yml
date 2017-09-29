@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  #database: prueba
+  database: fulbito
+
+
+test:
+  <<: *default
+  database: Proyecto5_test
+
+
+production:
+  <<: *default
+  database: Proyecto5_production
+  username: Proyecto5
+  password: <%= ENV['PROYECTO5_DATABASE_PASSWORD'] %>

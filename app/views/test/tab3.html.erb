@@ -1,0 +1,76 @@
+ <section class="content-header">
+  <h1>
+    RoR
+    <small>Formularios</small>
+  </h1>
+</section>
+
+<section class="content">
+         <!-- REGISTRAR PERSONA -->
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Formularios</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-12">
+                
+                    <div class="panel-body">
+              
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tes1">Test1</a></li>
+                    <li><a data-toggle="tab" href="#test2">Test2</a></li>
+                    <li><a data-toggle="tab" href="#test3">Test3</a></li>
+                    <li><a data-toggle="tab" href="#test4">Test4</a></li>
+                    <li><a data-toggle="tab" href="#test5">Test5</a></li>
+                  </ul>
+                
+                  <div class="tab-content">
+                    <div id="test1" class="tab-pane fade in active">
+                       
+                        <%= form_for :producto, :url => {:controller => "test", :action => "tab3_post"}, :method => :post, :html => { :class => "form-horizontal" , :id => "form_producto"}  do |f| %>
+                        <h3>Operaciones aritméticas</h3>
+                            <input type="number" name="opeA"/>
+                            <input type="number" name="opeB"/>
+                            <select name="operador">
+                              <option value="1">Sumar</option>
+                              <option value="2">Restar</option>
+                              <option value="3">Multiplicar</option>
+                              <option value="4">Dividir</option>
+                            </select>
+                            <input type="submit" value="Calcular"/>
+                          <% end %>
+                            
+                          <%= @resultado %>
+
+                        
+                    </div>
+                    <div id="test2" class="tab-pane fade">
+                        Test2
+                    </div>
+                    <div id="test3" class="tab-pane fade">
+                        Test3
+                    </div>
+                    <div id="test4" class="tab-pane fade">
+                        Test4
+                    </div>
+                    <div id="test5" class="tab-pane fade">
+                        Test4
+                    </div>
+                  </div>
+                  
+                </div>
+                
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+</section>
